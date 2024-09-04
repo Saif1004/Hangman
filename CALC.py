@@ -25,15 +25,16 @@ def hangman():
         print('Current word: ', ' '.join(word_list).upper())
 
         user_letter = input('Guess a letter: ').lower()
-
+        if user_letter in used_letters:
+            print("You have already used this letter")
+        if user_letter not in word_letters:
+            print("That's not a valid letter")
         if user_letter in alphabet - used_letters:
             used_letters.add(user_letter)
         if user_letter in word_letters:
             word_letters.remove(user_letter)
-        elif user_letter in used_letters:
-            print("You have already used this letter")
-        else:
-            print("Invalid")
+
+
 
 
 
