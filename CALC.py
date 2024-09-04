@@ -18,9 +18,6 @@ def hangman():
     while len(word_letters) > 0:
         print('You have used these letters:' , '' .join(used_letters).upper())
 
-
-
-
         word_list = [letter if letter in used_letters else '-' for letter in word]
         print('Current word: ', ' '.join(word_list).upper())
 
@@ -31,7 +28,7 @@ def hangman():
             print("That's not a valid letter")
         if user_letter in alphabet - used_letters:
             used_letters.add(user_letter)
-        if user_letter in word_letters:
+        elif user_letter in word_letters:
             word_letters.remove(user_letter)
 
 
